@@ -4,14 +4,14 @@ import './SideMenu.css';
 export default class SideMenu extends Component {
     render(){
         return (
-            <div class="bs-component">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active">
+            <div className="bs-component">
+                <div className="list-group">
+                    <a href="#" className="list-group-item list-group-item-action active">
                         Cras justo odio
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
+                    <a href="#" className="list-group-item list-group-item-action">Dapibus ac facilisis in
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action ">Morbi leo risus
+                    <a href="#" className="list-group-item list-group-item-action ">Morbi leo risus
                     </a>
                 </div>
             </div>

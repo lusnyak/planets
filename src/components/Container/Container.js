@@ -7,9 +7,9 @@ import Content from '../Content';
 export default class Container extends Component {
     render(){
         return (
-            <div class="container">
+            <div className="container">
               <Top/>
-              <div class="row">
+              <div className="row">
                 <SideMenu/>
                 <Content/>
                  </div>
