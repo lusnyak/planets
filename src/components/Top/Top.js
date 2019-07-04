@@ -14,20 +14,26 @@ export default class Top extends Component {
     state = {
         id: 3,
         planet: {},
-        planets: this.service.getPlanets()
+        isLoading: true
     }
 
-    getRandomPlanet = () => {
+    getRandomPlanet = async () => {
+        try {
+            const planetId = Math.floor(Math.random()*20)
+        const planet = await this.service.getPlanet(planetId);
         this.state.planets.then((res)=>{
             this.setState({
-                planet: res[0]
+                id: planetId,
+                planet: planet,
             })
         })
-        
+        } catch(error) {
+            console.log(error);
+        };        
     }
 
     render(){
-        const {planet, id} = this.state;
+        const {planet, id, isLoading} = this.state;
         return (
             <div className="jumbotron"> 
             
@@ -40,7 +46,6 @@ export default class Top extends Component {
                         <p className="card-text">
                         {planet.name}
                         </p>
-                        {/* <button onClick={this.getRandomPlanet}>Click me</button> */}
                     </div>    
                 </div>
             </div>
